@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>My Healt</title>
+    <link rel="icon" href="{{ url_for('static', filename='css/icons8-medical-48.png') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+<body>
+  <!-- <div class="head">
+    <div class="logo"><img src="{{ url_for('static', filename='css/icons.png') }}" alt="" class="logo_image"> <h2 class="heading_nav">My Health</h2> </div>
+    <div class="navigation">
+      <ul class="navs">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
+        <li><a href="{{ url_for('parkinsons') }}">Parkinsons</a></li>
+        <li><a href="{{ url_for('heartdisease') }}">HeartDisease</a></li>
+
+      </ul>
+      
+        <a href="{{ url_for('sign_in') }}" class="sign_in_sign_up">Sign In</a>
+
+
+    </div>
+  </div> -->
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='css/icons.png') }}" alt="" class="logo_image"> My Healt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Disease
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url_for('diabetes') }}">Diabetes</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('parkinsons') }}">Parkinsons</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('heartdisease') }}">Heart </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('sign_in') }}">SignIn</a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <div class="container">
+    {%block content%}
+    {%endblock%}
+  </div>
+</body>
+</html>
