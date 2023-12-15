@@ -1,27 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
-from flask_sqlalchemy import SQLAlchemy
-
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sigup.db'
-#Intialize the database 
-db=SQLAlchemy(app)
-
-#Create db model
-class Signup(db.Model):
-    id=db.Column(db.Integer, primary_key=True)
-    name=db.Column(db.String(200), nullable=False)
-    email_id=db.Column(db.String(500),nullable=False)
-    number=db.Column(db.Integer, nullable=False)
-    gender=db.Column(db.String(100))
-    address=db.Column(db.String(500))
-    #create a function to return a string
-    def _repr_(self):
-        return '<Name %r>' % self.id
-    
-
 # instantiate object
 
 #loading the different saved model for different disease
