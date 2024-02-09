@@ -1,36 +1,59 @@
 {%extends "layout.html"%}
 {%block content%}
 <style>
-    h2 {color: #000080;}
-      
-    a[href] {color: red;}
-
-    a:hover {color: green;}
-
-    
-    body {
-        background-image: url('');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-    }
+   
         
         
 </style>
 
 
 <div class="about">
-  <center><h1>Welcome to Our Multiple Disease Predictor Site</h1>
-  <h2>Our trained Machine Learning model can predict whether a person is suffering from a disease or not on the basis of details provided to it.<h2>
-</center>
+  <div class="carosal">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{url_for('static', filename='css/image1.png')}}"  class="image-carsol d-block w-80" alt="image1" style="height: 400px;">
+        </div>
+        <div class="carousel-item">
+          <img src="https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg" class=" imamge-carsol d-block w-100" alt="doctor" style="height: 500px">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <h2>This site offers the following disease prediction:</h2>
+  <div class="cards">
+     <div class="card1  card">
+       <img src="https://www.biospectrumindia.com/uploads/articles/istock_921720384-15226.jpg" alt="diabetes">
+       <div class="button-part"><button class="card-btn"><a href="{{ url_for('diabetes') }}" class="card-link">Diabetes</a></button></div>
+     </div>
+     <div class="card2 card">
+      <img src="{{url_for('static', filename='css/parkinson.jpg')}}" alt="parkinsons" >
+      <button class="card-btn"><a href="{{ url_for('parkinsons') }}" class="card-link">Parkinsons</a></button>
+     </div>
+     <div class="card3 card">
+      <img src="{{url_for('static', filename='css/heartD.jpg')}}" alt="">
+      <button class="card-btn"><a href="{{ url_for('heartdisease') }}" class="card-link">Heart Disease</a></button>
+     </div>
+
+  </div>
   
-    <h2><br/>This site offers the following disease prediction:<br/>
-    <ul>
-        <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
-        <li><a href="{{ url_for('parkinsons') }}">Parkinsons</a></li>
-        <li><a href="{{ url_for('heartdisease') }}">Heart Disease</a></li>
-    </ul>
-  </h2>
+    
 
   <br/>
   <br/>
